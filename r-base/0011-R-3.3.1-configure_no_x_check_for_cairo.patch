@@ -1,0 +1,40 @@
+diff -Naur R-3.3.1.orig/configure R-3.3.1/configure
+--- R-3.3.1.orig/configure	2016-06-13 18:16:32.000000000 -0400
++++ R-3.3.1/configure	2016-10-22 00:37:31.210019067 -0400
+@@ -34390,7 +34390,7 @@
+ 
+ #include <pango/pango.h>
+ #include <pango/pangocairo.h>
+-#include <cairo-xlib.h>
++#include <cairo.h>
+ #if CAIRO_VERSION  < 10200
+ #error cairo version >= 1.2 required
+ #endif
+@@ -34486,7 +34486,6 @@
+ /* end confdefs.h.  */
+ 
+ #include <cairo.h>
+-#include <cairo-xlib.h>
+ #if CAIRO_VERSION  < 10200
+ #error cairo version >= 1.2 required
+ #endif
+diff -Naur R-3.3.1.orig/m4/cairo.m4 R-3.3.1/m4/cairo.m4
+--- R-3.3.1.orig/m4/cairo.m4	2016-03-16 19:02:07.000000000 -0400
++++ R-3.3.1/m4/cairo.m4	2016-10-22 00:37:50.113322000 -0400
+@@ -70,7 +70,7 @@
+                     [AC_LINK_IFELSE([AC_LANG_SOURCE([[
+ #include <pango/pango.h>
+ #include <pango/pangocairo.h>
+-#include <cairo-xlib.h>
++#include <cairo.h>
+ #if CAIRO_VERSION  < 10200
+ #error cairo version >= 1.2 required
+ #endif
+@@ -143,7 +143,6 @@
+ 		     [r_cv_cairo_works], 
+                      [AC_LINK_IFELSE([AC_LANG_SOURCE([[
+ #include <cairo.h>
+-#include <cairo-xlib.h>
+ #if CAIRO_VERSION  < 10200
+ #error cairo version >= 1.2 required
+ #endif

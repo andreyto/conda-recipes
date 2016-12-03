@@ -36,7 +36,6 @@ Linux() {
     fi
 
     mkdir -p $PREFIX/lib
-
     ./configure --prefix=${PREFIX}              \
                 --enable-shared                 \
                 --enable-R-shlib                \
@@ -45,7 +44,7 @@ Linux() {
                 --enable-memory-profiling       \
                 --with-tk-config=${TK_CONFIG}   \
                 --with-tcl-config=${TCL_CONFIG} \
-                --with-x                        \
+                --with-x=no                     \
                 --with-pic                      \
                 --with-cairo                    \
                 --with-curses                   \

@@ -7,9 +7,9 @@ export CFLAGS="-I$PREFIX/include -L$PREFIX/lib"
 # Due to this change, we disable building X11 support for cairo on Mac by
 # default.
 export XWIN_ARGS=""
-if [ `uname` == Darwin ]; then
+#if [ `uname` == Darwin ]; then
    export XWIN_ARGS="--disable-xlib -disable-xcb --disable-glitz"
-fi
+#fi
 
 
 ./configure                 \
